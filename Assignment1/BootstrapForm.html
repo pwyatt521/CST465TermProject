@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -8,7 +8,63 @@
 
 <body>
     <h1>Bootstrap forms</h1>
+    <form action="https://www.oit.edu/cst465" method="POST">
+        <div class="form-group">
+        <label for="Name" >Name:</label>
+        <br>
+        <input type="text" id="Name" name="Name"/> 
+        </div>
+        <div class="form-group">
+        <label for="UserType" >UserType:</label>
+        <br>
+        <select id="UserType" name="UserType">
+            <option value="Student">Student</option>
+            <option value="Teacher">Teacher</option>
+        </select>
+        </div>
+        <div class="form-group">
+        <label for="EmailAddress">EmailAddress:</label>
+        <br>
+        <input type="text" name="EmailAddress" id="EmailAddress"/>
+        </div>
+        <div class="form-group">
+        <label for="Band">Band:</label>
+        <br>
+        <input type="text" name="Band" id="Band"/>
+        </div>
+        <div class="form-group">
+        <label for="Hobby">Hobby:</label>
+        <br>
+        <input type="text" name="Hobby" id="Hobby"/>
+        </div>
+        <div class="form-group">
+        <label for="CoursePrefix">CoursePrefix:</label>
+        <br>
+        <input type="text" name="CoursePrefix" id="CoursePrefix"/>
+        </div>
+        <div class="form-group">
+        <label for="CourseNumber">CourseNumber:</label>
+        <br>
+        <input type="text" name="CourseNumber" id="CourseNumber"/>
+        </div>
+        <div class="form-group">
+        <label for="CourseDescription">CourseDescription:</label>
+        <br>
+        <input type="text" name="CourseDescription" id="CourseDescription"/>
+        </div>
+        <div class="form-group">
+        <label for="Biography">Biography:</label>
+        <br>
+        <input type="text" name="Biography" id="Biography"/>
+        </div>
+        <div class="form-group">
+        <label for="Nickname">Nickname:</label>
+        <br>
+        <input type="text" name="Nickname" id="Nickname"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
 
+    </form>
 </body>
 
 </html>
