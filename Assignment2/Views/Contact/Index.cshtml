@@ -1,0 +1,30 @@
+@model Assignment2.Models.ContactModel
+@{
+    ViewBag.Title = "Contact";
+}
+<body>
+    <header>
+        <h1>Contact</h1>
+    </header>
+    <p>To Contact, send email using form below</p>
+    <form method="POST" action="/Contact/ContactCreated">
+        <div class="form-group">
+        @Html.LabelFor(  m => m.name,  new { @class = "control-label" })
+        @Html.EditorFor( m => m.name)
+        </div>
+        <div class="form-group">
+        @Html.LabelFor(  m => m.phoneNumber,  new { @class = "control-label" })
+        @Html.EditorFor( m => m.phoneNumber)
+        </div>
+        </div>
+        <div class="form-group">
+        @Html.LabelFor(  m => m.email,  new { @class = "control-label" })
+        @Html.EditorFor( m => m.email)
+        </div>
+        <div class="form-group">
+        @Html.LabelFor(  m => m.message,  new { @class = "control-label" })
+        @Html.EditorFor( m => m.message)
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
