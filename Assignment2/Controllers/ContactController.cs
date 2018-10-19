@@ -7,11 +7,11 @@ namespace Assignment2.Controllers
     public class ContactController : Controller
     {
         [HttpPost]
-        public ActionResult ContactCreate(ContactModel mContact){
+        public ActionResult ContactCreated(ContactModel mContact){
             if (!ModelState.IsValid){
-                return View(mContact);
+                return View("Index",mContact);
             }
-            return View("ContactCreated",mContact);
+            return View(mContact);
         }
         public ActionResult Index()
         {
