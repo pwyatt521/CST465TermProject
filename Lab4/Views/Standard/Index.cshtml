@@ -1,0 +1,46 @@
+@model Lab4.Models.ComputerModel
+@{
+    ViewBag.Title = "Standard";
+}
+<body>
+    <header>
+        <h1>Standard</h1>
+    </header>
+    <p>Please fill out the form below</p>
+    <form method="POST" action="/Standard/Index">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <label for="Name" class="control-label">Name</label>
+            <input type="text" class = "form-control" id="Name" name="Name">
+        </div>
+        <div class="form-group">
+            <label for="Password" class="control-label">AdministratorPassword</label>
+            <input type="password" class = "form-control" id="Password" name="Password">
+        </div>
+        <div class="form-group">
+            <label for="IPAddress" class="control-label">IPAddress</label>
+            <input type="text" class = "form-control" id="IPAddress" name="IPAddress">
+        </div>
+        <div class="form-group">
+            <label for="Location" class="control-label">Location</label>
+            <input type="text" class = "form-control" id="Location" name="Location">
+        </div>
+        <div class="form-group">
+            <label for="OS" class="control-label">OS Type</label>
+            <select class = "form-control" id="OS" name="OS">
+                @foreach (var OSType in Lab4.Models.ComputerModel.OSTypes){
+                    <option>@OSType</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Description" class="control-label">Description</label>
+            <input type="text" class = "form-control" id="Description" name="Description">
+        </div>
+        <div class="form-group">
+            <label for="SupportedMonitors" class="control-label">SupportedMonitors</label>
+            <input type="number" class = "form-control" id="SupportedMonitors" name="SupportedMonitors">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>

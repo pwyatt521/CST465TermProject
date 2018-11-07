@@ -1,0 +1,51 @@
+@model Lab4.Models.ComputerModel
+<body>
+<div class="row">
+  <div class="col-sm-4">
+      <div>
+          <span>Name: </span>@Model.Name
+      </div>
+      <div>
+          <span>Password: </span>@Model.Password
+      </div>
+      <div>
+          <span>IPAddress: </span>@Model.IPAddress
+      </div>
+      <div>
+          <span>Location: </span>@Model.Location
+      </div>
+      <div>
+          <span>OS: </span>@Model.OS
+      </div>
+      <div>
+          <span>Description: </span>@Model.Description
+      </div>
+      <div>
+          <span>SupportedMonitors: </span>@Model.SupportedMonitors
+      </div>
+  </div>
+  <div class="col-sm-4">
+      @Html.LabelFor(m=>m.Name)
+      @Html.DisplayFor(m=>m.Name)
+      <br>
+      @Html.LabelFor(m=>m.Password)
+      @Html.DisplayFor(m=>m.Password)
+      <br>
+      @Html.LabelFor(m=>m.IPAddress)
+      @Html.DisplayFor(m=>m.IPAddress)
+      <br>
+      @Html.LabelFor(m=>m.Location)
+      @Html.DisplayFor(m=>m.Location)
+      <br>
+      @Html.LabelFor(m=>m.OS)
+      @Html.DisplayFor(m=>m.OS)
+      <br>
+      @Html.LabelFor(m=>m.Description)
+      @Html.DisplayFor(m=>m.Description)
+      <br>
+      @Html.LabelFor(m=>m.SupportedMonitors)
+      @Html.DisplayFor(m=>m.SupportedMonitors)
+  </div>
+  <div class="col-sm-4">@Html.DisplayForModel()</div>
+</div>
+</body>
