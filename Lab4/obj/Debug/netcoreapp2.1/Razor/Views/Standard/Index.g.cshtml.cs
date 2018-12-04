@@ -14,8 +14,11 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"61b5d674aacdd2937a469b4f71ec75793b0aa86b", @"/Views/Standard/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"710bef30620f5b45d41ddf5acb7a43e3a27d1566", @"/Views/_ViewImports.cshtml")]
     public class Views_Standard_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Lab4.Models.ComputerModel>
     {
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("method", "POST", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("action", new global::Microsoft.AspNetCore.Html.HtmlString("/Standard/Index"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         #line hidden
         #pragma warning disable 0169
         private string __tagHelperStringValueBuffer;
@@ -35,6 +38,9 @@ namespace AspNetCore
             }
         }
         private global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_BodyTagHelper;
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper;
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper;
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
@@ -45,19 +51,24 @@ namespace AspNetCore
 #line default
 #line hidden
             BeginContext(70, 1902, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e4229f286692401cb30cdc95b53c58fe", async() => {
-                BeginContext(76, 154, true);
-                WriteLiteral("\n    <header>\n        <h1>Standard</h1>\n    </header>\n    <p>Please fill out the form below</p>\n    <form method=\"POST\" action=\"/Standard/Index\">\n        ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc9ee861d54142ca94fac03c40cec826", async() => {
+                BeginContext(76, 100, true);
+                WriteLiteral("\n    <header>\n        <h1>Standard</h1>\n    </header>\n    <p>Please fill out the form below</p>\n    ");
                 EndContext();
-                BeginContext(231, 23, false);
+                BeginContext(176, 1788, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa9ac310d10c4d53b3e66ae1e6c7982d", async() => {
+                    BeginContext(221, 9, true);
+                    WriteLiteral("\n        ");
+                    EndContext();
+                    BeginContext(231, 23, false);
 #line 11 "/Users/paulwyatt/Desktop/CST465TermProject/Lab4/Views/Standard/Index.cshtml"
    Write(Html.AntiForgeryToken());
 
 #line default
 #line hidden
-                EndContext();
-                BeginContext(254, 991, true);
-                WriteLiteral(@"
+                    EndContext();
+                    BeginContext(254, 991, true);
+                    WriteLiteral(@"
         <div class=""form-group"">
             <label for=""Name"" class=""control-label"">Name</label>
             <input type=""text"" class = ""form-control"" id=""Name"" name=""Name"">
@@ -78,32 +89,46 @@ namespace AspNetCore
             <label for=""OS"" class=""control-label"">OS Type</label>
             <select class = ""form-control"" id=""OS"" name=""OS"">
 ");
-                EndContext();
+                    EndContext();
 #line 31 "/Users/paulwyatt/Desktop/CST465TermProject/Lab4/Views/Standard/Index.cshtml"
                  foreach (var OSType in Lab4.Models.ComputerModel.OSTypes){
 
 #line default
 #line hidden
-                BeginContext(1321, 28, true);
-                WriteLiteral("                    <option>");
-                EndContext();
-                BeginContext(1350, 6, false);
+                    BeginContext(1321, 20, true);
+                    WriteLiteral("                    ");
+                    EndContext();
+                    BeginContext(1341, 24, false);
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d48b63d920c49dc853bb0197dfd0a4e", async() => {
+                        BeginContext(1350, 6, false);
 #line 32 "/Users/paulwyatt/Desktop/CST465TermProject/Lab4/Views/Standard/Index.cshtml"
                        Write(OSType);
 
 #line default
 #line hidden
-                EndContext();
-                BeginContext(1356, 10, true);
-                WriteLiteral("</option>\n");
-                EndContext();
+                        EndContext();
+                    }
+                    );
+                    __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+                    __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+                    await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                    if (!__tagHelperExecutionContext.Output.IsContentModified)
+                    {
+                        await __tagHelperExecutionContext.SetOutputContentAsync();
+                    }
+                    Write(__tagHelperExecutionContext.Output);
+                    __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                    EndContext();
+                    BeginContext(1365, 1, true);
+                    WriteLiteral("\n");
+                    EndContext();
 #line 33 "/Users/paulwyatt/Desktop/CST465TermProject/Lab4/Views/Standard/Index.cshtml"
                 }
 
 #line default
 #line hidden
-                BeginContext(1384, 581, true);
-                WriteLiteral(@"            </select>
+                    BeginContext(1384, 573, true);
+                    WriteLiteral(@"            </select>
         </div>
         <div class=""form-group"">
             <label for=""Description"" class=""control-label"">Description</label>
@@ -114,8 +139,27 @@ namespace AspNetCore
             <input type=""number"" class = ""form-control"" id=""SupportedMonitors"" name=""SupportedMonitors"">
         </div>
         <button type=""submit"" class=""btn btn-primary"">Submit</button>
-    </form>
-");
+    ");
+                    EndContext();
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Method = (string)__tagHelperAttribute_0.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                EndContext();
+                BeginContext(1964, 1, true);
+                WriteLiteral("\n");
                 EndContext();
             }
             );

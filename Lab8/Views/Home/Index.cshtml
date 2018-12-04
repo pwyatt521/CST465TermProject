@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNetCore.Identity;
+
+@{
+    ViewData["Title"] = "Home";
+}
+<body>
+    <h1>
+        Welcome
+    </h1>
+    <h2>
+        <a asp-area="" asp-controller="Adventure" asp-action="Index">Adventures</a>
+    </h2>
+    <p>
+        Adventures contains a list of adventures that users have been on
+        and a general information about that adventure
+    </p>
+    <h2>
+        <a asp-area="" asp-controller="Book" asp-action="Index">Books</a>
+    </h2>
+    <p>
+        These are book reports made by users on books that they enjoyed or 
+        did not enjoy as much as people thought that they would
+    </p>
+    <h2>
+        <a asp-area="" asp-controller="WorkOut" asp-action="Index">WorkOuts</a>
+    </h2>
+    <p>
+        This is a place for users to log their workouts
+    </p>
+</body>

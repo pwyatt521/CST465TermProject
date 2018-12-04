@@ -1,0 +1,8 @@
+@model Midterm.Models.TrueFalseQuestion
+
+    <h2 class = "control-label" >
+        @Model.ID: @Model.Question
+    </h2>
+    @Html.DropDownListFor(m=>m.Answer, new SelectList(Midterm.Models.TrueFalseQuestion.TOrF), new {@class="form-control"})
+    @Html.ValidationMessageFor(i=>i.ID,"",new {@class = "text-danger"})
+    <br>

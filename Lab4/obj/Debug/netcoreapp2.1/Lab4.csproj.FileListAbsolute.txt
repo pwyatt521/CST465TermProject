@@ -30,3 +30,4 @@
 /Users/paulwyatt/Desktop/CST465TermProject/Lab4/obj/Debug/netcoreapp2.1/Razor/Views/HHEditorForModel/Index.g.cshtml.cs
 /Users/paulwyatt/Desktop/CST465TermProject/Lab4/obj/Debug/netcoreapp2.1/Razor/Views/Shared/EditorTemplates/OSDropdown.g.cshtml.cs
 /Users/paulwyatt/Desktop/CST465TermProject/Lab4/obj/Debug/netcoreapp2.1/Razor/Views/TagHelper/Index.g.cshtml.cs
+/Users/paulwyatt/Desktop/CST465TermProject/Lab4/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.g.cshtml.cs

@@ -1,0 +1,8 @@
+@model Midterm.Models.ShortAnswerQuestion
+
+    <h2 class = "control-label" >
+        @Model.ID: @Model.Question
+    </h2>
+    @Html.TextBoxFor(m=>m.Answer, new {@class="form-control"})
+    @Html.ValidationMessageFor(i=>i.ID,"",new {@class = "text-danger"})
+    <br>

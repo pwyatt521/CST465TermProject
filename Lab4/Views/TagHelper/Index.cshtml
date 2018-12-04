@@ -7,11 +7,15 @@
         <h1>TagHelper</h1>
     </header>
     <p>Please fill out the form below</p>
-    <form method="POST" asp-action="TagHelper" asp-controller="TagHelper">
+    <form method="POST" asp-action="Index" asp-controller="TagHelper">
         @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
         <div class="form-group">
             <label asp-for="Name" class="control-label">Name</label>
             <input type="text" class = "form-control" asp-for="Name">
+            <span asp-validation-for="Name"></span>
+
         </div>
         <div class="form-group">
             <label asp-for="Password" class="control-label">Password</label>
@@ -21,7 +25,7 @@
         <div class="form-group">
             <label asp-for="IPAddress" class="control-label">IPAddress</label>
             <input type="text" class = "form-control" asp-for="IPAddress">
-            <span asp-validation-for="IPAdress"></span>
+            <span asp-validation-for="IPAddress"></span>
         </div>
         <div class="form-group">
             <label asp-for="Location" class="control-label">Location</label>
@@ -34,6 +38,7 @@
                     <option>@OSType</option>
                 }
             </select>
+            <span asp-validation-for="OS"></span>
         </div>
         <div class="form-group">
             <label asp-for="Description" class="control-label">Description</label>
@@ -42,6 +47,7 @@
         <div class="form-group">
             <label asp-for="SupportedMonitors" class="control-label">SupportedMonitors</label>
             <input type="number" class = "form-control" asp-for="SupportedMonitors">
+            <span asp-validation-for="SupportedMonitors"></span>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -1,0 +1,19 @@
+@model IEnumerable<Midterm.Models.TestQuestion>
+@{
+    ViewBag.Title = "DisplayResults";
+}
+<body>
+    <h1>
+        Test Answers
+    </h1>
+@foreach (var item in Model)
+{
+    <h2>
+        @item.ID: 
+        @item.Question
+    </h2>
+    <p>
+        @item.Answer
+    </p>
+}
+</body>

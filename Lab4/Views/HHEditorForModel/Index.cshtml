@@ -2,5 +2,12 @@
 @{
     ViewBag.Title = "HHEditorForModel";
 }
-@Html.AntiForgeryToken()
-@Html.EditorForModel()
+ <header>
+        <h1>HHEditorForModel</h1>
+</header>
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.EditorForModel(new { htmlAttributes = new {@class = "form-control" }})
+        <button type="submit" class="btn btn-primary">Submit</button>
+    }

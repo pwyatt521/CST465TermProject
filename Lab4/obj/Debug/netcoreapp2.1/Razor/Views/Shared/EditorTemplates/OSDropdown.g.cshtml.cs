@@ -14,6 +14,7 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3cd3da239c13b5eef71265696f18738eb37a24ff", @"/Views/Shared/EditorTemplates/OSDropdown.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"710bef30620f5b45d41ddf5acb7a43e3a27d1566", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_EditorTemplates_OSDropdown : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<string>
     {
         #pragma warning disable 1998

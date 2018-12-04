@@ -1,0 +1,33 @@
+@model IEnumerable<Midterm.Models.TestQuestion>
+@{
+    ViewBag.Title = "TakeTest";
+}
+<body>
+    <header>
+        <h1>HHEditorFor</h1>
+    </header>
+@using (Html.BeginForm("TakeTest", "Midterm", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @foreach(var item in Model)
+    {
+        @if (item is Midterm.Models.TrueFalseQuestion)
+        {
+            @Html.Partial("Partial/TrueFalse", item);
+        }
+        else if (item is Midterm.Models.MultipleChoiceQuestion)
+        {
+            @Html.Partial("Partial/MultipleChoice", item)
+        }
+        else if (item is Midterm.Models.ShortAnswerQuestion)
+        {
+            @Html.Partial("Partial/ShortAnswer", item)
+        }
+        else if (item is Midterm.Models.LongAnswerQuestion)
+        {
+            @Html.Partial("Partial/LongAnswer", item)
+        }
+    }
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+</body>

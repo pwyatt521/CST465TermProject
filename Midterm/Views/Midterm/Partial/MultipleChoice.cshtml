@@ -1,0 +1,13 @@
+@model Midterm.Models.MultipleChoiceQuestion
+
+    <h2 class = "control-label" >
+        @Model.ID: @Model.Question
+    </h2>
+    @foreach (string item in Model.Choices)
+    {
+        <div class = "form-control">
+            @Html.RadioButton(item, Model.ID) @item
+        </div>
+    }
+    @Html.ValidationMessageFor(i=>i.ID,"",new {@class = "text-danger"})
+    <br>

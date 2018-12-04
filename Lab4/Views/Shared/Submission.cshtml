@@ -3,49 +3,56 @@
 <div class="row">
   <div class="col-sm-4">
       <div>
-          <span>Name: </span>@Model.Name
+          <span class="label label-default">Name: </span>@Model.Name
       </div>
       <div>
-          <span>Password: </span>@Model.Password
+          <span class="label label-default">Password: </span>@Model.Password
       </div>
       <div>
-          <span>IPAddress: </span>@Model.IPAddress
+          <span class="label label-default">IPAddress: </span>@Model.IPAddress
       </div>
       <div>
-          <span>Location: </span>@Model.Location
+          <span class="label label-default">Location: </span>@Model.Location
       </div>
       <div>
-          <span>OS: </span>@Model.OS
+          <span class="label label-default">OS: </span>@Model.OS
       </div>
       <div>
-          <span>Description: </span>@Model.Description
+          <span class="label label-default">Description: </span>@Model.Description
       </div>
       <div>
-          <span>SupportedMonitors: </span>@Model.SupportedMonitors
+          <span class="label label-default">SupportedMonitors: </span>@Model.SupportedMonitors
       </div>
   </div>
   <div class="col-sm-4">
-      @Html.LabelFor(m=>m.Name)
+      @Html.LabelFor(m=>m.Name):
       @Html.DisplayFor(m=>m.Name)
+      @Html.ValidationMessageFor(m=>m.Name)
       <br>
-      @Html.LabelFor(m=>m.Password)
+      @Html.LabelFor(m=>m.Password):
       @Html.DisplayFor(m=>m.Password)
+      @Html.ValidationMessageFor(m=>m.Password)
       <br>
-      @Html.LabelFor(m=>m.IPAddress)
+      @Html.LabelFor(m=>m.IPAddress):
       @Html.DisplayFor(m=>m.IPAddress)
+      @Html.ValidationMessageFor(m=>m.IPAddress)
       <br>
-      @Html.LabelFor(m=>m.Location)
+      @Html.LabelFor(m=>m.Location):
       @Html.DisplayFor(m=>m.Location)
+      @Html.ValidationMessageFor(m=>m.Location)
       <br>
-      @Html.LabelFor(m=>m.OS)
+      @Html.LabelFor(m=>m.OS):
       @Html.DisplayFor(m=>m.OS)
+      @Html.ValidationMessageFor(m=>m.OS)
       <br>
-      @Html.LabelFor(m=>m.Description)
+      @Html.LabelFor(m=>m.Description):
       @Html.DisplayFor(m=>m.Description)
+      @Html.ValidationMessageFor(m=>m.Description)
       <br>
-      @Html.LabelFor(m=>m.SupportedMonitors)
+      @Html.LabelFor(m=>m.SupportedMonitors):
       @Html.DisplayFor(m=>m.SupportedMonitors)
+      @Html.ValidationMessageFor(m=>m.SupportedMonitors)
   </div>
-  <div class="col-sm-4">@Html.DisplayForModel()</div>
+  <div class="col-sm-4">@Html.DisplayForModel(new  { htmlAttributes = new {@class="label label-default" }})</div>
 </div>
 </body>
