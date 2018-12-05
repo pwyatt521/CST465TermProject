@@ -35,7 +35,10 @@ namespace Lab8.Controllers
         [HttpGet]
         public IActionResult PostBlog()
         {
-            return View(new AdventureModel());
+            AdventureModel model = new AdventureModel();
+            model.AName = _Settings.DefaultName;
+            model.ARating = _Settings.DefaultRating;
+            return View(model);
         }
 
         [HttpPost]

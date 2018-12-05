@@ -56,7 +56,7 @@ using Lab8.Models;
 #line default
 #line hidden
             BeginContext(73, 1355, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50fd06fadfa34325a3227bb5cfe4d8c9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b4cec6fda784d9d87480d5d102b1f7f", async() => {
                 BeginContext(79, 38, true);
                 WriteLiteral("\n    <h1>\n        Post Blog\n    </h1>\n");
                 EndContext();

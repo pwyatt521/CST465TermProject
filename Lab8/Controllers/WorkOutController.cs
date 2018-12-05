@@ -35,7 +35,10 @@ namespace Lab8.Controllers
         [HttpGet]
         public IActionResult PostBlog()
         {
-            return View(new WorkOutModel());
+            WorkOutModel model = new WorkOutModel();
+            model.WName = _Settings.DefaultName;
+            model.WRating = _Settings.DefaultRating;
+            return View(model);
         }
 
         [HttpPost]

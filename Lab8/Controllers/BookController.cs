@@ -35,7 +35,10 @@ namespace Lab8.Controllers
         [HttpGet]
         public IActionResult PostBlog()
         {
-            return View(new BookModel());
+            BookModel model = new BookModel();
+            model.BTitle = _Settings.DefaultName;
+            model.BRating = _Settings.DefaultRating;
+            return View(model);
         }
 
         [HttpPost]
