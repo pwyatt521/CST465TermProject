@@ -8,7 +8,7 @@
     </h1>
     <h2>
     <div>
-        <a asp-area="" asp-controller="Book" asp-action="PostBlog">Post Blog</a>
+            <a asp-area="" asp-controller="Book" asp-action="PostBlog">Post Blog</a>
     </div>
     </h2>
 <ul class="list-group">
@@ -17,7 +17,9 @@
         <li class="list-group-item">
             <div class="row">
                 <div class="col-md-10">
-                    <a href="@Url.Action("View", "Book", new { @id = Book.ID })">@Book.BTitle</a>
+                    <p>
+                        <a href="@Url.Action("View", "Book", new { @id = Book.ID })">@Book.BTitle</a>
+                    </p>
                 </div>
                 <div class="col-md-2">
                     <form class ="form-inline" asp-action="Delete" asp-controller="Book" method="post">
