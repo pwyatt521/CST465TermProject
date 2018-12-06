@@ -1,4 +1,4 @@
 # CST465TermProject
-CST465 Term Project that will be built upon
+Look at Lab8 For final Project
 
-Klamath Calamity Crew is a lifestyle page that will have blogging and an option to subscribe to news letters.
+Klamath Calamity Crew is a lifestyle page that will have blogging.
