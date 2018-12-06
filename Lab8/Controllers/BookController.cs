@@ -38,6 +38,7 @@ namespace Lab8.Controllers
             BookModel model = new BookModel();
             model.BTitle = _Settings.DefaultName;
             model.BRating = _Settings.DefaultRating;
+            model.PostedBy = _Settings.DefaultUser;
             return View(model);
         }
 

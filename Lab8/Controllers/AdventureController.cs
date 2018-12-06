@@ -38,6 +38,7 @@ namespace Lab8.Controllers
             AdventureModel model = new AdventureModel();
             model.AName = _Settings.DefaultName;
             model.ARating = _Settings.DefaultRating;
+            model.PostedBy = _Settings.DefaultUser;
             return View(model);
         }
 

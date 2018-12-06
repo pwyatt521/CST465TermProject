@@ -1,4 +1,5 @@
 using System;
+using System.Data.SqlClient;
 using Lab8.Areas.Identity.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -14,10 +15,15 @@ namespace Lab8.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
+
             builder.ConfigureServices((context, services) => {
+                var sbuilder = new SqlConnectionStringBuilder (
+                    context.Configuration.GetConnectionString("DefaultConnection"));
+                sbuilder.Password = context.Configuration["DBPassword"];
+
                 services.AddDbContext<Lab8IdentityDbContext>(options =>
                     options.UseSqlServer(
-                        context.Configuration.GetConnectionString("DefaultConnection")));
+                        sbuilder.ConnectionString));
                 services.AddIdentity<Lab8Model,IdentityRole>(options =>
                 {
                     options.Password.RequireDigit = false;

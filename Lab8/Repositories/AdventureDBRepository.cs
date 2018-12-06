@@ -16,17 +16,22 @@ namespace Adventure.Repositories
 {
     public class AdventureDBRepository : IAdventureRepository
     {
-        private Lab8Settings _Settings;
-        public AdventureDBRepository(IOptions<Lab8Settings> AdventureConfig)
+        private IConfiguration Configuration;
+        private string conString;
+        public AdventureDBRepository( IConfiguration config)
         {
-            _Settings = AdventureConfig.Value;
+            Configuration = config;
+            
+            var sbuilder = new SqlConnectionStringBuilder (
+                config.GetConnectionString("DefaultConnection"));
+            sbuilder.Password = config["DBPassword"];
+            conString = sbuilder.ConnectionString;
         }
         
         public virtual AdventureModel Get(int id)
         {
-            
             AdventureModel Adventure = null;
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("Adventure_Get", connection))
                 {
@@ -60,7 +65,7 @@ namespace Adventure.Repositories
         public virtual async Task<List<AdventureModel>> GetList()
         {
             List<AdventureModel> AdventureList = new List<AdventureModel>();
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("Adventure_GetList", connection))
                 {
@@ -89,7 +94,7 @@ namespace Adventure.Repositories
 
         public virtual void Save(AdventureModel Adventure)
         {
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("Adventure_InsertUpdate", connection))
                 {
@@ -110,7 +115,7 @@ namespace Adventure.Repositories
         }
         public virtual void Delete(int id)
         {
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("Adventure_Delete", connection))
                 {

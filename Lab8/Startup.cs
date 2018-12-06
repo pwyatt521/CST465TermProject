@@ -15,7 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Adventure.Repositories;
 using Book.Repositories;
 using WorkOut.Repositories;
-
+using System.Data.SqlClient;
 
 namespace Lab8
 {
@@ -38,9 +38,13 @@ namespace Lab8
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            var builder = new SqlConnectionStringBuilder (
+                Configuration.GetConnectionString("DefaultConnection"));
+            builder.Password = Configuration["DBPassword"];
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    builder.ConnectionString));
             //services.AddDefaultIdentity<Lab8Model>()
             //    .AddEntityFrameworkStores<ApplicationDbContext>();
 

@@ -16,17 +16,22 @@ namespace WorkOut.Repositories
 {
     public class WorkOutDBRepository : IWorkOutRepository
     {
-        private Lab8Settings _Settings;
-        public WorkOutDBRepository(IOptions<Lab8Settings> WorkOutConfig)
+        private IConfiguration configuration;
+        private string conString;
+        public WorkOutDBRepository(IConfiguration config)
         {
-            _Settings = WorkOutConfig.Value;
+            configuration = config;
+            var sbuilder = new SqlConnectionStringBuilder (
+                config.GetConnectionString("DefaultConnection"));
+            sbuilder.Password = config["DBPassword"];
+            conString = sbuilder.ConnectionString;
         }
         
         public virtual WorkOutModel Get(int id)
         {
             
             WorkOutModel WorkOut = null;
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("WorkOut_Get", connection))
                 {
@@ -61,7 +66,7 @@ namespace WorkOut.Repositories
         public virtual async Task<List<WorkOutModel>> GetList()
         {
             List<WorkOutModel> WorkOutList = new List<WorkOutModel>();
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("WorkOut_GetList", connection))
                 {
@@ -91,7 +96,7 @@ namespace WorkOut.Repositories
 
         public virtual void Save(WorkOutModel WorkOut)
         {
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("WorkOut_InsertUpdate", connection))
                 {
@@ -113,7 +118,7 @@ namespace WorkOut.Repositories
         }
         public virtual void Delete(int id)
         {
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("WorkOut_Delete", connection))
                 {

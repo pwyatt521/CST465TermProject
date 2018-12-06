@@ -10,7 +10,7 @@ namespace Lab8
         public string DatabaseConfigFile { get; set; }
         public string DefaultName { get; set; }
         public int DefaultRating { get; set; }
+        public string DefaultUser {get; set; }
         public Dictionary<string, string> ConnectionStrings { get; set; }
-        
     }
 }

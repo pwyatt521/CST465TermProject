@@ -38,6 +38,7 @@ namespace Lab8.Controllers
             WorkOutModel model = new WorkOutModel();
             model.WName = _Settings.DefaultName;
             model.WRating = _Settings.DefaultRating;
+            model.PostedBy = _Settings.DefaultUser;
             return View(model);
         }
 

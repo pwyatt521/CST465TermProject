@@ -16,17 +16,23 @@ namespace Book.Repositories
 {
     public class BookDBRepository : IBookRepository
     {
-        private Lab8Settings _Settings;
-        public BookDBRepository(IOptions<Lab8Settings> BookConfig)
+        private IConfiguration configuration;
+        private string conString;
+        public BookDBRepository(IConfiguration config)
         {
-            _Settings = BookConfig.Value;
+            configuration = config;
+
+            var sbuilder = new SqlConnectionStringBuilder (
+                config.GetConnectionString("DefaultConnection"));
+            sbuilder.Password = config["DBPassword"];
+            conString = sbuilder.ConnectionString;
         }
         
         public virtual BookModel Get(int id)
         {
             
             BookModel Book = null;
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("Book_Get", connection))
                 {
@@ -62,7 +68,7 @@ namespace Book.Repositories
         public virtual async Task<List<BookModel>> GetList()
         {
             List<BookModel> BookList = new List<BookModel>();
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("Book_GetList", connection))
                 {
@@ -92,7 +98,7 @@ namespace Book.Repositories
 
         public virtual void Save(BookModel Book)
         {
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("Book_InsertUpdate", connection))
                 {
@@ -115,7 +121,7 @@ namespace Book.Repositories
         }
         public virtual void Delete(int id)
         {
-            using (SqlConnection connection = new SqlConnection(_Settings.ConnectionStrings["DefaultConnection"]))
+            using (SqlConnection connection = new SqlConnection(conString))
             {
                 using (SqlCommand command = new SqlCommand("Book_Delete", connection))
                 {

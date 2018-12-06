@@ -70,12 +70,12 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
             BeginContext(81, 743, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2981ace2b40a4fffa9b6c4b0ae749df9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2a33dc1a7742400384f1c436ee1833d9", async() => {
                 BeginContext(87, 58, true);
                 WriteLiteral("\r\n    <h1>\r\n        Welcome\r\n    </h1>\r\n    <h2>\r\n        ");
                 EndContext();
                 BeginContext(145, 75, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de65d3b7ba77416c89a8d548d9043b2b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "698fd677999e4359baeb25a552956ec2", async() => {
                     BeginContext(206, 10, true);
                     WriteLiteral("Adventures");
                     EndContext();
@@ -101,7 +101,7 @@ using Microsoft.AspNetCore.Identity;
                 WriteLiteral("\r\n    </h2>\r\n    <p>\r\n        Adventures contains a list of adventures that users have been on\r\n        and a general information about that adventure\r\n    </p>\r\n    <h2>\r\n        ");
                 EndContext();
                 BeginContext(400, 65, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c112a5551c074b8ca7016a59e41a642d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "facd8720437c4a88ac53b0072568e376", async() => {
                     BeginContext(456, 5, true);
                     WriteLiteral("Books");
                     EndContext();
@@ -127,7 +127,7 @@ using Microsoft.AspNetCore.Identity;
                 WriteLiteral("\r\n    </h2>\r\n    <p>\r\n        These are book reports made by users on books that they enjoyed or \r\n        did not enjoy as much as people thought that they would\r\n    </p>\r\n    <h2>\r\n        ");
                 EndContext();
                 BeginContext(657, 71, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "203a7b24f9764c2b91ad516aa22cc70d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3c154571c144f85abb8fea1294c08ae", async() => {
                     BeginContext(716, 8, true);
                     WriteLiteral("WorkOuts");
                     EndContext();

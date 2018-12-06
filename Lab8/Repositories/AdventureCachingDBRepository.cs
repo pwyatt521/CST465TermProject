@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Lab8;
 using Lab8.Models;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
 namespace Adventure.Repositories
@@ -14,7 +15,7 @@ namespace Adventure.Repositories
         private readonly string _CachePrefix = "AdventureCacheRepo";
         private string _CacheListKey { get { return $"{_CachePrefix}_List"; } }
         private IMemoryCache _Cache;
-        public AdventureCachingDBRepository(IOptions<Lab8Settings> AdventureConfig, IMemoryCache cache) : base(AdventureConfig)
+        public AdventureCachingDBRepository(IConfiguration Config, IMemoryCache cache) : base(Config)
         {
             _Cache = cache;
         }
